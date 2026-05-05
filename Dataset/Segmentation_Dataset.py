@@ -1,17 +1,11 @@
 # Image Processing Libraries
-import cv2
 from cv2 import imread,resize
-from scipy.ndimage import label, find_objects
 
 # Data Handling Libraries
 import numpy as np
-import pandas as pd
-from sklearn.model_selection import train_test_split
 
 # Visualization Libraries
 import matplotlib.pyplot as plt
-import seaborn as sns
-from tqdm import tqdm
 
 # File and Operating System Libraries
 import os
@@ -105,7 +99,7 @@ class XRayDataset(Dataset):
 
 if __name__=="__main__":
     # PATHS
-    root_dir = "/Users/riccardo/PycharmProjects/Lung_Segmentation"
+    root_dir = ""
     data_dir = os.path.join(root_dir, "Data")
     img_dir = os.path.join(data_dir, "ChestXRay/image")
     mask_dir = os.path.join(data_dir, "ChestXRay/mask")
