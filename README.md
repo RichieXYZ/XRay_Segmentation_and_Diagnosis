@@ -13,6 +13,7 @@ XRay_Segmentation_and_Diagnosis/
 |  
 |- Data/  
 |- Exploratory_Analysis/  
+|- Dataset/  
 |- Segmentation/  
 |- Classification/  
 |- Models/  
