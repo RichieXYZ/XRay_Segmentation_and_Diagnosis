@@ -21,16 +21,16 @@ print("Training on : ", device)
 
 # PATHS
 # ---------------------------------------------
-root_dir = "/Users/riccardo/PycharmProjects/Lung_Segmentation"
+root_dir = ""
 data_dir = os.path.join(root_dir, "Data")
 img_dir = os.path.join(data_dir, "ChestXRay/image")
 mask_dir = os.path.join(data_dir, "ChestXRay/mask")
-path_model = os.path.join(root_dir, "UnetXRay.pt")
+path_model = os.path.join(root_dir, "Models", "UnetXRay.pt")
 # ---------------------------------------------
 
 # Datasets - Train/Validation
 # ---------------------------------------------
-from Dataset_Class import XRayDataset
+from Dataset.Segmentation_Dataset import XRayDataset
 img_size = 256
 train_set = XRayDataset(
     img_dir=img_dir,
@@ -44,14 +44,6 @@ val_set = XRayDataset(
     mask_dir=mask_dir,
     size=(img_size, img_size),
     split="val",
-    train_ratio=0.7,
-    shuffle=False
-)
-test_set = XRayDataset(
-    img_dir=img_dir,
-    mask_dir=mask_dir,
-    size=(img_size, img_size),
-    split="test",
     train_ratio=0.7,
     shuffle=False
 )
@@ -75,6 +67,7 @@ print(model)
 print(f"Model Parameters : {count_params(model)}")
 
 # Hyperparameters
+# -------------------------------------------
 Loss = nn.BCELoss()
 optimizer = torch.optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()),
                               lr=1e-3,
@@ -205,6 +198,8 @@ while True:
     total_samples = 0
 
     with torch.no_grad():
+
+        # Val loader iteration
         for _, data in enumerate(tqdm(val_loader)):
             x, y = data
             batch_size = x.size(0)
