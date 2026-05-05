@@ -21,17 +21,17 @@ print("Training on : ", device)
 
 # PATHS
 # ---------------------------------------------
-root_dir = "/Users/riccardo/PycharmProjects/Lung_Segmentation"
+root_dir = ""
 data_dir = os.path.join(root_dir, "Data")
 img_dir = os.path.join(data_dir, "ChestXRay/image")
 mask_dir = os.path.join(data_dir, "ChestXRay/mask")
 metadata_path = os.path.join(data_dir, "MetaData.csv")
-path_model = os.path.join(root_dir, "TBC_detection/TBC_Classifier_v3.pt")
+path_model = os.path.join(root_dir, "Model/ResNet_Classifier.pt")
 # ---------------------------------------------
 
 # Datasets - Train/Validation
 # ---------------------------------------------
-from TBC_Dataset import TBCDataset2
+from Dataset.Classification_Dataset import TBCDataset2
 img_size = 256
 train_set = TBCDataset2(
     img_dir=img_dir,
@@ -253,4 +253,4 @@ def plot_results(history, model_name):
     plt.savefig("Results", bbox_inches="tight")
     plt.show()
 
-plot_results(history, "TBC_Classifier")
+plot_results(history, "ResNet_Classifier")
