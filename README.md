@@ -19,6 +19,8 @@ XRay_Segmentation_and_Diagnosis/
 |- Results/  
 |- Images/  
 
-The folder "Data/" contains MetaData.csv file that is a table with 6 columns and 704 rows. The columns are "id", "gender", "age", "county", "ptb" and "remarks".  
+1. |- Data/ : The folder "Data/" contains MetaData.csv file that is a table with 6 columns and 704 rows. The columns are "id", "gender", "age", "county", "ptb" and "remarks".  
 In order to run the scripts with minimum edit, it is necessary to include in "Data/" the dataset folder available for download at the link provided (~3.8 GB) containing images and masks, and name it "ChestXRay". After doing this, it is necessary just to specify the project root directory at the beginning of the scripts.
+
+2. |- Exploratory_Analysis/ : this folder contains one script for descriptive statistics of the dataset and one for visualizing some of the images/masks pairs.
 
