@@ -21,7 +21,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # PATHS
-root_dir = "/Users/riccardo/PycharmProjects/Lung_Segmentation"
+root_dir = ""  # specify root path : "~/Xray_Segmentation_and_Diagnosis"
 data_dir = os.path.join(root_dir, "Data")
 img_dir  = os.path.join(data_dir, "ChestXRay/image")
 mask_dir = os.path.join(data_dir, "ChestXRay/mask")
