@@ -9,13 +9,13 @@ https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation?resour
 
 The Project is structured as follows:
 
-XRay_Segmentation_and_Diagnosis/
-|
-|- Data/
-|- Exploratory_Analysis/
-|- Segmentation/
-|- Classification/
-|- Models/
-|- Results/
-|- Images/
+XRay_Segmentation_and_Diagnosis/  
+|  
+|- Data/  
+|- Exploratory_Analysis/  
+|- Segmentation/  
+|- Classification/  
+|- Models/  
+|- Results/  
+|- Images/  
 
