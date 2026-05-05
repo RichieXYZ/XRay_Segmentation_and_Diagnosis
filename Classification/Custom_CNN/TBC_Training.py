@@ -21,17 +21,17 @@ print("Training on : ", device)
 
 # PATHS
 # ---------------------------------------------
-root_dir = "/Users/riccardo/PycharmProjects/Lung_Segmentation"
+root_dir = ""
 data_dir = os.path.join(root_dir, "Data")
 img_dir = os.path.join(data_dir, "ChestXRay/image")
 mask_dir = os.path.join(data_dir, "ChestXRay/mask")
 metadata_path = os.path.join(data_dir, "MetaData.csv")
-path_model = os.path.join(root_dir, "TBC_detection/TBC_Classifier_v3.pt")
+path_model = os.path.join(root_dir, "Model/TBC_Classifier.pt")
 # ---------------------------------------------
 
 # Datasets - Train/Validation
 # ---------------------------------------------
-from TBC_Dataset import TBCDataset
+from Dataset.Classification_Dataset import TBCDataset
 img_size = 256
 train_set = TBCDataset(
     img_dir=img_dir,
