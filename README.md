@@ -39,7 +39,7 @@ While the classification models score both above 80% in detecting TBC cases:
 Custom CNN: Parameters = 1403521  
 Test Accuracy : 0.802 | Precision : 0.86 | Recall : 0.71 | F1 : 0.78  
 
-ResNet18 Backbone : Parameters = 11236449
+ResNet18 Backbone : Parameters = 11236449  
 Test Accuracy : 0.858 | Precision : 0.86 | Recall : 0.846 | F1 : 0.85 
 
 8. |- Images/ : Contains images used in this description.
