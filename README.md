@@ -31,9 +31,18 @@ In order to run the scripts with minimum edit, it is necessary to include in "Da
 
 5. |- Classification/ : for this task I explored two different approaches, a custom CNN consisting in a convolutional encoder plus fully connected classifier head and a Transfer Learning (TL) method with the ResNet18 backbone pre-trained on ImageNet1K followed by a "Squeeze-and-Excitation" (SE) block and a fully connected binary classifier head. The training routine follows the same early stopping logic as the segmentation task, monitoring the validation confusion matrix during training. The custom CNN is trained completely while for the TL approach the first three layers of the backbone are frozen.
 
-6. |- Results/ :  In this folder there are the scripts for testing the models and assessing the performance over the test set.
+6. |- Results/ :  In this folder there are the scripts for testing the models and assessing the performance over the test set. The segmentation model reaches an astonishing average metrics above 99%:
+   
+Test Set Metrics | Accuracy = 0.998 | IoU = 0.991 | Dice = 0.996
 
-7. |- Images/ :
+While the classification models score both above 80% in detecting TBC cases:  
+Custom CNN: Parameters = 1403521  
+Test Accuracy : 0.802 | Precision : 0.86 | Recall : 0.71 | F1 : 0.78  
+
+ResNet18 Backbone : Parameters = 11236449
+Test Accuracy : 0.858 | Precision : 0.86 | Recall : 0.846 | F1 : 0.85 
+
+8. |- Images/ : Contains images used in this description.
 
 
 
