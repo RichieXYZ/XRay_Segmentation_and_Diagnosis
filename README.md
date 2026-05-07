@@ -25,3 +25,15 @@ In order to run the scripts with minimum edit, it is necessary to include in "Da
 
 2. |- Exploratory_Analysis/ : this folder contains one script for descriptive statistics of the dataset and one for visualizing some of the images/masks pairs.
 
+3. |- Dataset/ :
+
+4. |- Segmentation/ :
+
+5. |- Classification/ :
+
+6. |- Results/ :
+
+7. |- Images/ :
+
+
+
