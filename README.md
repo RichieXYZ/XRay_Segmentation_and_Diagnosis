@@ -25,13 +25,13 @@ In order to run the scripts with minimum edit, it is necessary to include in "Da
 
 2. |- Exploratory_Analysis/ : this folder contains one script for descriptive statistics of the dataset and one for visualizing some of the images/masks pairs.
 
-3. |- Dataset/ :
+3. |- Dataset/ : contains the dataset classes for both the segmentation and classification tasks. Both inherit the structure of PyTorch Dataset. The dataset for segmentation returns image-mask couples, resized to a user specified size, and perform train/val/test splitting. The dataset for classification of TBC-positive images is more sophisticated, since it performs stratified splitting in order to handle unbalanced classes, masking of the images for allowing the model to just see the lungs region and data augmentation to enhance robustness; in the end it returns the augmented image and the corresponding label (0/1).
 
-4. |- Segmentation/ :
+4. |- Segmentation/ : here is stored the segmentation model class and the training script for this model. The architecture for this image binary segmentation is U-Net based, consisting in a convolutional encoder-decoder pair with skip connections. The training routine is based on early stopping method, monitoring the validation performance metrics like pixel-accuracy, intersection over union (IoU) and Dice score.
 
-5. |- Classification/ :
+5. |- Classification/ : for this task I explored two different approaches, a custom CNN consisting in a convolutional encoder plus fully connected classifier head and a Transfer Learning (TL) method with the ResNet18 backbone pre-trained on ImageNet1K followed by a "Squeeze-and-Excitation" (SE) block and a fully connected binary classifier head. The training routine follows the same early stopping logic as the segmentation task, monitoring the validation confusion matrix during training. The custom CNN is trained completely while for the TL approach the first three layers of the backbone are frozen.
 
-6. |- Results/ :
+6. |- Results/ :  In this folder there are the scripts for testing the models and assessing the performance over the test set.
 
 7. |- Images/ :
 
