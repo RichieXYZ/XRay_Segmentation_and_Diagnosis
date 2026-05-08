@@ -35,6 +35,9 @@ In order to run the scripts with minimum edit, it is necessary to include in "Da
    
 Test Set Metrics | Accuracy = 0.998 | IoU = 0.991 | Dice = 0.996
 
+
+![Descrizione dell'immagine](Images/Segmentation_Test.png)
+
 While the classification models score both above 80% in detecting TBC cases:  
 Custom CNN: Parameters = 1403521  
 Test Accuracy : 0.802 | Precision : 0.86 | Recall : 0.71 | F1 : 0.78  
